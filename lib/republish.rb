@@ -17,7 +17,7 @@ class Republish
     @types.each do |type|
       entries = fetch_entries(type)
       entries.each do |entry|
-        STDOUT.write '.' if entry.publish
+        STDOUT.write '.' if entry.published? && entry.publish
       end
       STDOUT.write "\n\n"
     end
